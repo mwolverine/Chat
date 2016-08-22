@@ -17,11 +17,7 @@ class UserTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    @IBAction func addUser(sender: AnyObject){
-        //UserController.sharedController.createNewUser(CKRecordID)
-    }
-    
+
     
     // MARK: - Table view data source
     
@@ -60,6 +56,7 @@ class UserTableViewController: UITableViewController {
                     usersArray.append(user)
                 }
                 composeVC.users = usersArray
+                
             }
         }
      }

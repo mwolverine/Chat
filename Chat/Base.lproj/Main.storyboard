@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Chat-->
@@ -39,7 +38,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="fSf-ul-PfA" kind="show" id="MrM-By-oLj"/>
+                                    <segue destination="fSf-ul-PfA" kind="show" identifier="textSegue" id="MrM-By-oLj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -135,8 +134,7 @@
                                 <constraint firstAttribute="trailing" secondItem="qY4-X9-mu0" secondAttribute="trailing" constant="30" id="POa-sf-Js2"/>
                                 <constraint firstItem="nky-2W-grh" firstAttribute="top" secondItem="qY4-X9-mu0" secondAttribute="bottom" constant="1" id="Qul-Sj-gCl"/>
                                 <constraint firstItem="nky-2W-grh" firstAttribute="leading" secondItem="P1W-5P-86w" secondAttribute="leading" constant="30" id="S6T-K5-1B4"/>
-                                <constraint firstItem="qY4-X9-mu0" firstAttribute="top" secondItem="P1W-5P-86w" secondAttribute="topMargin" id="dMq-aj-mRL"/>
-                                <constraint firstItem="qY4-X9-mu0" firstAttribute="top" secondItem="P1W-5P-86w" secondAttribute="top" constant="5" id="dgN-iB-R1D"/>
+                                <constraint firstItem="qY4-X9-mu0" firstAttribute="top" secondItem="P1W-5P-86w" secondAttribute="top" constant="8" id="dgN-iB-R1D"/>
                                 <constraint firstAttribute="bottom" secondItem="nky-2W-grh" secondAttribute="bottom" constant="7" id="do7-lc-N5N"/>
                                 <constraint firstAttribute="trailing" secondItem="nky-2W-grh" secondAttribute="trailing" constant="30" id="fUX-Ae-51P"/>
                             </constraints>
@@ -180,11 +178,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Compose" id="lJY-Zr-Deh">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="qys-H9-O45">
-                            <connections>
-                                <action selector="cancelButtonTapped:" destination="fSf-ul-PfA" id="cJ4-gg-Rzb"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Send" id="30X-d8-8aQ">
                             <connections>
                                 <action selector="addMessage:" destination="fSf-ul-PfA" id="SYZ-xJ-j2n"/>
@@ -199,24 +192,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btW-fe-9hU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2506" y="796"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="gzh-EC-yKl">
-            <objects>
-                <viewController id="aVy-SK-2aJ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2SF-we-wey"/>
-                        <viewControllerLayoutGuide type="bottom" id="Tbu-VN-7fk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yxN-H5-pZ2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cAi-gZ-dIq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="966" y="1107"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QC9-q2-VQe">
@@ -238,6 +213,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="frH-sx-aoO"/>
+        <segue reference="MrM-By-oLj"/>
     </inferredMetricsTieBreakers>
 </document>

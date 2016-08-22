@@ -35,7 +35,7 @@ class UserController {
                 
                 let newUserRecord = CKRecord(recordType: User.typeKey)
                 let reference = CKReference(recordID: record.recordID, action: .None)
-                
+                user.userReference = reference
                 newUserRecord.setValue(reference, forKey: "identifier")
                 newUserRecord.setValue(user.firstName, forKey: User.firstNameKey)
                 newUserRecord.setValue(user.lastName, forKey: User.lastNameKey)

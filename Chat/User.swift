@@ -9,7 +9,7 @@
 import UIKit
 import CloudKit
 
-class User {
+class User: CloudKitSyncable {
     
     var firstName: String
     var lastName: String
@@ -28,11 +28,14 @@ class User {
     var recordType: String { return User.typeKey }
     
     var cloudKitRecordID: CKRecordID?
+    var userReference: CKReference?
     
     convenience required init?(record: CKRecord) {
         guard let firstName = record[User.firstNameKey] as? String, let lastName = record[User.lastNameKey] as? String else { return nil }
         self.init(firstName: firstName, lastName: lastName)
         cloudKitRecordID = record.recordID
+        let ref = CKReference(recordID: record.recordID, action: .None)
+        self.userReference = ref
     }
 }
 

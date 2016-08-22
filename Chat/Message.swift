@@ -9,7 +9,7 @@
 import UIKit
 import CloudKit
 
-class Message {
+class Message: CloudKitSyncable {
     
     var time: NSDate
     var texts: [Text]

@@ -1,8 +1,9 @@
+
 //
 //  CloudKitSyncable.swift
-//  Chat
+//  Timeline
 //
-//  Created by Chris Yoo on 8/17/16.
+//  Created by Chris Yoo on 8/10/16.
 //  Copyright © 2016 Chris Yoo. All rights reserved.
 //
 
@@ -10,11 +11,14 @@ import Foundation
 import CloudKit
 
 protocol CloudKitSyncable: class {
+    
     init?(record: CKRecord)
     
-    var cloudKitRecordID: CKRecordID? { get set}
+    var cloudKitRecordID: CKRecordID? { get set }
     var recordType: String { get }
 }
+
+
 
 extension CloudKitSyncable {
     var isSynced: Bool {
@@ -24,6 +28,6 @@ extension CloudKitSyncable {
     var cloudKitReference: CKReference? {
         guard let recordID = cloudKitRecordID else { return nil }
         return CKReference(recordID: recordID, action: .None)
+        
     }
-    
 }
